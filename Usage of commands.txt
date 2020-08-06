@@ -1,0 +1,144 @@
+## HELPFUL TRICKS
+
+	## New line for more readability ##
+	
+		print('Four score and seven ' + \
+     		  'years ago...')
+
+			  
+	## Managing files / Writing / Reading ##
+	
+		open('path', 'mode')
+									'r' – Read mode which is used when the file is only being read 
+									'w' – Write mode which is used to edit and write new information to the file (any existing files with the same name will be erased when this mode is activated) 
+									'a' – Appending mode, which is used to add new data to the end of the file; that is new information is automatically amended to the end 
+									'r+' – Special read and write mode, which is used to handle both actions when working with a file
+									'wb' - Write binary (To remain certain Encoding)
+		read()
+		readlines()
+		write()
+		writelines()
+		close()
+		.endswith('.pdf')						//Check if the File ends with '.pdf'
+
+	
+## IMPORTs
+
+
+	import random							
+
+	import copy						Variable = copy.copy(ListName)    						//Saves the copy of the List                 onto the Variable
+									Variable = copy.deepcopy(ListName)						//Saves the copy of the List and inner Lists onto the Variable
+	import sys
+
+	import os						os.path.join('C:\\Users\\Uporabnik\\Desktop', filename)
+									os.makedirs('C:\\Users\\Uporabnik\\Desktop\\Saves')		//Make a folder
+									os.path.getsize(path)									//Size of a folder
+									os.listdir(path)										//Returns every folder name on that path
+									os.path.exists(path)									//Check if the path exists and return True if it does
+									os.path.isfile(path)									//Check if the path exists and is a FILE and return True if it is
+									os.path.isdir(path)										//Check if the path exists and is a FOLDER and return True if it is
+									os.unlink(path)											//Delete file on Path
+									os.rmdir(path)											//Delete empty Folder
+									os.system('cls')										//Clear console
+
+	import shutil					shutil.copy(SourcePath, DestinationPath)				//Copy File
+									shutil.copytree(SourcePath, DestinationPath)			//Copy Folder and its Contents
+									shutil.move(SourcePath, DestionationPath)				//Move File or Folder
+									shutil.rmtree(path)										//Delete entire Folder + Content
+									Variable = shutil.get_terminal_size().columns			//Save size of the column CMD terminal onto the Variable				Example:				print(Variable.center(shutil.get_terminal_size().columns))
+
+	import send2trash				send2trash.send2trash(path)								//Send file to Garbage-Man (Koš (Smetnjak))
+
+	import pprint					pprint.pprint(DictionaryName)							//Pretty Print from Dictionary - Looks much better - Prints each pair in new line
+
+	import re						search(String / text)									//Regular Expressions - Regex
+									findall(String / text)
+									sub('ReplaceWord', )
+									Variable = re.compile(r'\d\d\d-\d\d\d-\d\d\d')		//'\d' is for digit
+																						//'\D' is for not a digit from 0 to 9
+																						//'\w' is for Letters, Digits and underscore characters
+																						//'\W' is for not Letters, Digits and underscore characters
+																						//'\s' is for Space, Tab and newline characters
+																						//'\S' is for not Space, Tab and newline characters
+									Variable = re.compile(r'\.*', re.I)						//re.I ignores case sensitivity
+									Variable = re.compile(r'\.*', re.VERBOSE)				//re.VERBOSE makes it more readable
+	
+	import pyperclip
+
+	import webbrowser
+
+	import requests					requests.get(Website)												//Download a File from Website
+
+	import subprocess				subprocess.open(C:\\Users\\Your path blah blah)						//Open process/program on Path
+
+	import pyautogui				pyautogui.PAUSE	= 1													//Pause for 1second after every executed action
+									pyautogui.FAILSAFE = False											//Disable Fail-Safe function (Moving cursor to the upper-left corner gives ERROR)
+									pyautogui.size()													//Returns size of your resolution
+									pyautogui.moveTo(x-Coordinate, y-Coordinate, (optional)duration=1)	//Moves the mouse to the specified location instantaneously or if duration is set in that specified time
+									pyautogui.moveRel(x, y, (optional)duration=2)						//Move mouse from current position
+									pyautogui.position()												//Get position of a mouse
+									pyautogui.click((optional)x, (optional)y, button='left')			//Click or (optional)Move to x, y and click	//'left', 'right', 'middle'
+									pyautogui.doubleClick()												//Double left click
+									pyautogui.rightClick()												//Right click
+									pyautogui.middleClick()												//Middle click
+									pyautogui.dragTo(x, y, (optional)duration=3)						//Drag to x, y
+									pyautogui.dragRel(x, y, (optional)duration=4)						//Drag from current position
+									pyautogui.scroll(UnitsToScroll)										//Mouse scroll
+									pyautogui.screenshot()												//Makes screenshot
+
+									pyautogui.typewrite('Buttons to press')								//Press buttons on your keyboard
+									pyautogui.KEYBOARD_KEYS												//Puts out Names of keys on your keyboard
+									pyautogui.keyDown()													//Pushes key down
+									pyautogui.keyUp()													//Releases key up
+									pyautogui.press()													//Presses key (keyDown + keyUp)
+									
+	import pygame					pygame.init()																//Initialize pygame DO THAT ALWAYS
+									Variable = pygame.display.set_mode((1920,1080))								//Set main playing window
+									pygame.display.set_caption('gameName')										//Name of your game to display
+									pygame.time.delay(milliseconds)												//Set refresh rate of window
+									pygame.event.get()													//Gives back events happening (Pressing Keys, Moving Mouse)
+									pygame.draw.rect(DrawingWindow, (255,255,255),(x, y, width, height))	//Draw rectangle on DrawingWindow with colors and where(x,y) + size
+									pygame.display.update()													//Update what u draw
+									Variable = pygame.keys.get_pressed()									//Return key to Variable that is being pressed
+									pygame.K_[Key]															//Check what is going on with certain Key
+										example:	Variable = pygame.keys.get_pressed()		//Get all keys pressed
+													if Variable[pygame.K_LEFT]:					//Check if key LEFT is pressed
+														move left								//If key LEFT is pressed do this
+
+	import bokeh																							//FOR DIAGRAMMS DISPLAYABLE ON INTERNET
+									from bokeh.plotting import figure, show, output_file					//Import the stuff you need
+									output_file("Name.html")												//Name your html file or specifiy PATH
+									Variable = figure(x_range = xAxisVariable)								//Creates a figure
+									Variable.vbar(x = xAxisVariable, top = yAxisVariable, width = 1)		//Add 'x' and 'y'(top) AXIS to the figure and width of bars
+									show(Variable)															//Render and show the PLOT
+													
+## DATA TYPES
+
+	int(Variable)
+	str(Variable)
+	float(Variable)
+
+
+## LISTS
+
+	list(Argument)
+
+	del ListName[Position]												//Delete Argument on a certain Position
+
+	ListName.index(Argument)											//Get position of an Argument
+	ListName.append(Argument)											//Add value to end of the list
+	ListName.insert(Position in List, Argument)							//Add value to list on certain position
+	ListName.remove(Argument)											//Remove Argument from list
+	ListName.sort()			Or			ListName.sort(reverse = True)			Or	ListName.sort(key = str.lower)
+
+
+## DICTIONARIES
+
+	DictionaryName = {'Position': 'Argument',}				//Make a Dictionary
+	DictionaryName.values()									//Return value	     from Dictionary
+	DictionaryName.keys()									//Return key	     from Dictionary
+	DictionaryName.items()									//Return key + value from Dictionary
+
+	DictionaryName.get('KeyName', failValue)				//Get Value of KeyName or if key does not exist return failValue
+	DictionaryName.setdefault('KeyName', Value)¸			//Make key KeyName with value Value
